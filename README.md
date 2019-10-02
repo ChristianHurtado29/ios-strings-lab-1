@@ -14,20 +14,62 @@
 Write code that prints out all the numbers from 1 to 10 as a single string.
 (Hint: the `String()` function can convert an Int to a String)
 
+```
+```
+ANSWER
+```
+var numString = " "
+for num in 1...10 {    // this is where the blank is turned into an in
+    numString += String(num)
+}
+print(numString)
+```
 ***
 ## Question 2
 
 Write code that prints out all the even numbers from 5 to 51 as a single string.
 
+ANSWER
+```
+var numString = " "
+for num in 5...51 {
+    if num % 2 == 0 {
+        numString += String(num)
+        print(numString)
+}
+}
+```
 ***
 ## Question 3
 
 Write code that prints out every number ending in 4 between 1 and 60 as a single string.
 
+ANSWER
+```
+var numString = " "
+
+for num in 1...60 {
+    if num % 10 == 4 {
+    numString += String(num)
+}
+}
+print(numString)
+```
+
 ***
 ## Question 4
 
 Print each character in the string `"Hello world!"`
+
+answer:
+```
+var alphabet = "Hello world!"
+
+for char in alphabet {
+    print(char)
+}
+```
+
 
 ***
 ## Question 5
@@ -36,12 +78,42 @@ Print out the last character in the string below.  You cannot use the Character 
 
 `let myStringSeven = "Hello world!"`
 
+ANSWER
+```
+let myStringSeven = "Hello world!"
+
+let endIndex = myStringSeven.endIndex
+let lastCharacterIndex = myStringSeven.index(before: endIndex)
+let lastCharacter = myStringSeven[lastCharacterIndex]
+print("the last character in \(myStringSeven) is \(lastCharacter)")
+```
 ***
 ## Question 6
 
 Write code that switches on a string, given the following conditions:
 - If the string's length is even, print out every character.
 - If the string's length is odd, print out every other character.
+
+ANSWER
+```
+let message = "Hey, I'm actually learning how to code"
+
+print("message is \(message.count) characters long")
+if message.count % 2 == 0 {
+    print("Message is even!")
+}   else{
+    print("Message is odd!")
+}
+switch message {
+case message where message.count % 2 == 0:
+    for char in message {
+    print(char, terminator: " ")
+    }
+default:
+for (index, char) in message.enumerated() where index % 2 == 0 {
+    print(char, terminator: " ")
+}
+```
 
 ***
 ## Question 7
@@ -53,6 +125,13 @@ Initialize a String with a character. Show that it is a Character, and not anoth
 
 Build five pairs of **canonically equivalent** strings, the first of each being a pre-composed character and the second being one that uses combinable unicode scalars. Show that they are equivalent.
 
+ANSWER
+```
+let unicodeLowercaseE = "\u{0065}"
+let eCharacter = "e"
+if unicodeLowercaseE == eCharacter{
+    print("they are equal")
+```
 ***
 ## Question 9
 
@@ -62,6 +141,10 @@ Build five pairs of **canonically equivalent** strings, the first of each being 
 ## Question 10
 
 **Using only Unicode**, print out your name.
+ANSWER
+```
+print("\u{0043}\u{0068}\u{0072}\u{0069}\u{0073}\u{0074}\u{0069}\u{0061}\u{006E}")
+```
 
 ***
 ## Question 11
@@ -90,7 +173,22 @@ Flower Box:
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 - - - - - - - - - - -
 ```
-
+ANSWER
+```
+for i in 1...11 {
+    print("- ", terminator:"")
+}
+var r = "| \u{2698} "
+for i in 1...5 {
+    print("")
+    for j in 1...5 {
+print(r, terminator: "")
+        if j % 5 == 0 {
+            print("|")
+}
+}
+}
+```
 ***
 ## Question 13
 
@@ -106,6 +204,25 @@ Chess Board:
 
 ♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟
 ♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜
+```
+ANSWER
+```
+swift
+print("\u{265C}\u{265E}\u{265D}\u{265B}\u{265A}\u{265D}\u{265E}\u{265C}")
+var p = ("\u{265F}")
+for _ in 1...8{
+    print(p, terminator: "")
+}
+var o = (" ")
+for _ in 1...4{
+    print(o)
+}
+var wp = ("\u{2659}")
+for _ in 1...8{
+    print(wp, terminator:"")
+}
+print(" ")
+print("\u{2656}\u{2658}\u{2657}\u{2655}\u{2654}\u{2657}\u{2658}\u{2656}")
 ```
 
 ***
